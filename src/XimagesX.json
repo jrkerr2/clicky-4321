@@ -1,0 +1,73 @@
+[
+    {
+        "id": "1",
+        "name": "helmet-1",
+        "image": "./images/helmet-1.jpg"
+    },
+
+    {
+        "id": "2",
+        "name": "helmet-2",
+        "image": "../src/images/helmet-2.jpg"
+    },
+
+    {
+        "id": "3",
+        "name": "helmet-3",
+        "image": "../src/images/helmet-3.jpg"
+    },
+
+    {
+        "id": "4",
+        "name": "helmet-4",
+        "image": "../src/images/helmet-4.jpg"
+    },
+
+    {
+        "id": "5",
+        "name": "helmet-5",
+        "image": "../src/images/helmet-5.jpg"
+    },
+
+    {
+        "id": "6",
+        "name": "helmet-6",
+        "image": "../src/images/helmet-6.jpg"
+    },
+
+    {
+        "id": "7",
+        "name": "helmet-7",
+        "image": "../src/images/helmet-7.jpg"
+    },
+
+    {
+        "id": "8",
+        "name": "helmet-8",
+        "image": "../src/images/helmet-8.jpg"
+    },
+
+    {
+        "id": "9",
+        "name": "helmet-1",
+        "image": "../src/images/helmet-1.jpg"
+    },
+
+    {
+        "id": "10",
+        "name": "helmet-1",
+        "image": "../src/images/helmet-1.jpg"
+    },
+
+    {
+        "id": "11",
+        "name": "helmet-1",
+        "image": "../src/images/helmet-1.jpg"
+    },
+
+    {
+        "id": "12",
+        "name": "helmet-1",
+        "image": "../src/images/helmet-1.jpg"
+    }
+]
