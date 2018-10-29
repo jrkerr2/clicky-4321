@@ -2,7 +2,7 @@ import React from 'react';
 import images from "./images.json";
 import Cards from './components/Cards';
 import Jumbo from './components/Jumbo';
-import Message from './components/Message';
+// import Message from './components/Message';
 
 class App extends React.Component {
 
@@ -45,7 +45,7 @@ class App extends React.Component {
     else {
       // console.log("Sorry! You guessed incorrectly.");
       return this.setState({
-        message: "Sorry! You guessed incorrectly. Try again.",
+        message: "Sorry! You guessed incorrectly. Try again by clicking a different image.",
         score: 0
 
       })
