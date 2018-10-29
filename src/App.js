@@ -17,8 +17,30 @@ class App extends React.Component {
   //   forEach(image => id = Math.random.floor())
   // }
 
-  clickHandler = () => {
+  clickHandler = (id, selected) => {
     const imageArray = this.state.images;
+
+    if(!selected) {
+      imageArray.forEach((image,index) => {
+        if (id === image.id) {
+          imageArray[index].selected = true;
+        }
+        console.log(image);
+        console.log(id,selected);        
+      });
+
+    }    
+    else {
+      console.log("WE GOT HERE");
+
+    }
+    // else {      
+    //   selected = true;
+    //   console.log(selected);
+      
+    // }
+  
+
     return this.setState({
       images: imageArray.sort(() => Math.random() - 0.5)
     });
@@ -47,9 +69,14 @@ class App extends React.Component {
         <div className="container"> 
           <Jumbo />
           {this.state.images.map(card => (
+
             <Cards 
-            cardImage={card.image}  
-            cardHandleClick={this.clickHandler}
+              cardImage={card.image}  
+              cardHandleClick={this.clickHandler}
+              key={card.id}
+              id={card.id}
+              name={card.name}
+              selected={card.selected}            
 
           />))} 
 
