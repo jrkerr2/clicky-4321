@@ -1,7 +1,7 @@
 import React from 'react';
 import images from "./images.json";
-import Cards from './Cards';
-import Jumbo from './Jumbo';
+import Cards from './components/Cards';
+import Jumbo from './components/Jumbo';
 
 class App extends React.Component {
 
@@ -14,33 +14,43 @@ class App extends React.Component {
   }
 
   // restartGame = () => {
-  //   forEach(image => id = Math.random.floor())
+  //   forEach(image => id = Math.random())
   // }
 
   clickHandler = (id, selected) => {
     const imageArray = this.state.images;
-
     if(!selected) {
       imageArray.forEach((image,index) => {
         if (id === image.id) {
           imageArray[index].selected = true;
         }
-        console.log(image);
-        console.log(id,selected);        
+        // console.log(image);
+        // console.log(id,selected); 
+
+        const { topScore, score } = this.state
+        const newScore = score + 1
+        const newTopScore = newScore > topScore ? newScore : topScore;
+        // console.log("Current: " + score, topScore);
+        // console.log("New: " + newScore, newTopScore);
+
+        return this.setState({
+          score: newScore,
+          topScore: newTopScore,
+          message: "You guessed correctly! Keep clicking."
+        })       
       });
 
     }    
     else {
-      console.log("WE GOT HERE");
+      // console.log("Sorry! You guessed incorrectly.");
+      return this.setState({
+        message: "Sorry! You guessed incorrectly.",
+        score: 0
+
+      })
 
     }
-    // else {      
-    //   selected = true;
-    //   console.log(selected);
-      
-    // }
-  
-
+    
     return this.setState({
       images: imageArray.sort(() => Math.random() - 0.5)
     });
