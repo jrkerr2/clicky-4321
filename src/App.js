@@ -2,7 +2,8 @@ import React from 'react';
 import images from "./images.json";
 import Cards from './components/Cards';
 import Jumbo from './components/Jumbo';
-// import Message from './components/Message';
+import "./App.css"
+import Message from './components/Message';
 
 class App extends React.Component {
 
@@ -66,9 +67,11 @@ class App extends React.Component {
       
         <div className="container"> 
           <Jumbo />
-
-          <p> { this.state.message } </p>
-          <h3> Score: { this.state.score } | Top Score: { this.state.topScore } </h3>        
+          <Message 
+            message = { this.state.message }
+            score = { this.state.score }
+            topScore = { this.state.topScore }
+          />       
                     
           {this.state.images.map(card => (
             <Cards 

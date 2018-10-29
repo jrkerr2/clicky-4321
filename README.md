@@ -9,6 +9,5 @@ Memory card game using React & JSX; User must click random images in a grid to a
 - source code here: https://github.com/jrkerr2/clicky-4321
 
 ## Technical Debt
-- Message.js won't work when included - commmented out for now
 - comments & pseudo-code & console.logs: cleanup needed for readability
 - doesn't work with Github Pages
