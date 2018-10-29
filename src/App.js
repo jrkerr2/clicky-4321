@@ -2,6 +2,7 @@ import React from 'react';
 import images from "./images.json";
 import Cards from './components/Cards';
 import Jumbo from './components/Jumbo';
+import Message from './components/Message';
 
 class App extends React.Component {
 
@@ -9,7 +10,7 @@ class App extends React.Component {
     images,
     score: 0,
     topScore: 0,
-    message: "You lose! Try again."
+    message: "Click on a character to start the game"
 
   }
 
@@ -44,7 +45,7 @@ class App extends React.Component {
     else {
       // console.log("Sorry! You guessed incorrectly.");
       return this.setState({
-        message: "Sorry! You guessed incorrectly.",
+        message: "Sorry! You guessed incorrectly. Try again.",
         score: 0
 
       })
@@ -78,8 +79,13 @@ class App extends React.Component {
       
         <div className="container"> 
           <Jumbo />
-          {this.state.images.map(card => (
 
+          <p> { this.state.message } </p>
+          <h3> Score: { this.state.score } | Top Score: { this.state.topScore } </h3>
+          
+          
+          
+          {this.state.images.map(card => (
             <Cards 
               cardImage={card.image}  
               cardHandleClick={this.clickHandler}
