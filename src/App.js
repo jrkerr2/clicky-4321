@@ -44,11 +44,16 @@ class App extends React.Component {
     }    
     else {
       // console.log("Sorry! You guessed incorrectly.");
-      return this.setState({
-        message: "Sorry! You guessed incorrectly. Try again by clicking a different image.",
-        score: 0
+      imageArray.forEach((image,index) => {
+        imageArray[index].selected = false;
 
       })
+      return this.setState({
+        message: "Sorry! You guessed incorrectly. Try again.",
+        score: 0
+      })
+
+     // imageArray.selected = false;
 
     }
     
