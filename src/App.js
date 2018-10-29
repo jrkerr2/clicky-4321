@@ -15,17 +15,25 @@ class App extends React.Component {
   }
 
   clickHandler = (id, selected) => {
+    // declare a new array, filled with objects from json file
     const imageArray = this.state.images;
+
+    // determine from child component (Cards) which image was clicked
+    // if not one already selected, mark it "dirty" for future checks
     if(!selected) {
       imageArray.forEach((image,index) => {
         if (id === image.id) {
           imageArray[index].selected = true;
         }
         
+        // deconstruct state object attributes needed
         const { topScore, score } = this.state
+        // set new score on success
         const newScore = score + 1
+        // set new top score if it exceeds old top score
         const newTopScore = newScore > topScore ? newScore : topScore;
         
+        // set state ojbect attributes as needed
         return this.setState({
           score: newScore,
           topScore: newTopScore,
@@ -33,7 +41,8 @@ class App extends React.Component {
         })       
       });
 
-    }    
+    }  
+    // this is the case for image selected TWICE (fail & reset)  
     else {
       imageArray.forEach((image,index) => {
         imageArray[index].selected = false;
@@ -46,7 +55,7 @@ class App extends React.Component {
       })
     
     }
-    
+    // reshuffle the "deck" (grid)
     return this.setState({
       images: imageArray.sort(() => Math.random() - 0.5)
     });
